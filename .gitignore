@@ -11,6 +11,10 @@
 # generated files
 bin/
 gen/
+obj/
+
+project.properties
+.cproject
 
 # Local configuration file (sdk path, etc)
 local.properties
