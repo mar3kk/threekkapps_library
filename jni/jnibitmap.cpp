@@ -72,7 +72,9 @@ void floodFill(uint32_t x, uint32_t y, uint32_t color, void* bitmapPixels, Andro
     	blue = (int) ((color & 0xFF0000) >> 16);
 		green = (int)((color & 0x00FF00) >> 8);
 		red = (int) (color & 0x0000FF);
-
+		blue = blue * alpha / 255;
+		green = green * alpha / 255;
+		red = red * alpha / 255;
 		int tmp = 0;
 		tmp = red;
 		red = blue;
@@ -81,7 +83,7 @@ void floodFill(uint32_t x, uint32_t y, uint32_t color, void* bitmapPixels, Andro
 		color =  ((alpha<< 24) & 0xFF000000) | ((blue<< 16) & 0xFF0000) |
 		              ((green << 8) & 0x00FF00) |
 		              (red & 0x0000FF);
-
+		LOGD("AndroidBitmap_lockPixels() failed ! error=%d");
 		std::queue < uint32_t > pixelsX;
 		std::queue < uint32_t > pixelsY;
 
