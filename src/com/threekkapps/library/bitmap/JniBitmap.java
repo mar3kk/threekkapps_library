@@ -17,6 +17,7 @@ public class JniBitmap {
 	 * @param x x coordinate where the algorithm starts
 	 * @param y y coordinate where the algorithm starts
 	 * @param color Color of fill in ARGB format
+	 * @param tolerance tolerance of the color range (0 is the exact color)
 	 **/
-	public static native void floodFill(Bitmap bitmap, int x, int y, int color);
+	public static native void floodFill(Bitmap bitmap, int x, int y, int color,int tolerance);
 }
